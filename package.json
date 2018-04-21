@@ -1,0 +1,33 @@
+{
+  "name": "spickle.com",
+  "version": "1.0.0",
+  "description": "Personal website of Derek Lutz.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SpliceVW/Spickle.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/SpliceVW/Spickle.com/issues"
+  },
+  "homepage": "https://github.com/SpliceVW/Spickle.com#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.19",
+    "html-webpack-plugin": "^3.2.0",
+    "path": "^0.12.7",
+    "ts-loader": "^4.2.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.3"
+  }
+}
