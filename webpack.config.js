@@ -1,15 +1,38 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CriticalPlugin = require('webpack-plugin-critical').CriticalPlugin;
 
 module.exports = {
     entry: './src/index.ts',
+    mode: 'development',
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
             }
         ]
     },
@@ -28,6 +51,12 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Spickle.com',
             template: 'index.html'
-        })
+        }),
+        new CriticalPlugin({
+            src: 'index.html',
+            inline: true,
+            minify: true,
+            dest: 'index.html'
+          })
     ]
 };

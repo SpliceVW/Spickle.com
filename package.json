@@ -21,13 +21,26 @@
   },
   "homepage": "https://github.com/SpliceVW/Spickle.com#readme",
   "devDependencies": {
+    "@types/node": "^9.6.6",
     "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.8.3",
     "path": "^0.12.7",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
     "ts-loader": "^4.2.0",
+    "tslint": "^5.9.1",
     "typescript": "^2.8.3",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.14",
-    "webpack-dev-server": "^3.1.3"
+    "webpack-dev-server": "^3.1.3",
+    "webpack-plugin-critical": "^1.0.0"
+  },
+  "dependencies": {
+    "modularscale-sass": "^3.0.5",
+    "normalize.css": "^8.0.0",
+    "npm": "^5.8.0"
   }
 }

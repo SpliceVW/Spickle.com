@@ -1,0 +1,82 @@
+/*  Typography
+
+    Follows the principles of:
+     * modular scale 
+     * vertical rhythm (http://webtypography.net/2.2.2)
+*/
+
+$magicNumber: 1.5;
+$magicNumberEm: #{$magicNumber}em;
+$magicNumberRem: #{$magicNumber}rem;
+
+@mixin scale($magnitude)
+{
+    margin-bottom: 0;
+
+    @if $magnitude == 0
+    {
+        font-size: 1rem;
+        margin-top: $magicNumberRem;
+    }
+    @else if $magnitude == 1
+    {
+        font-size: 1.33rem;
+        line-height: 1.1278em;
+        margin-top: 1.1278em
+    }
+    @else if $magnitude == 2
+    {
+        font-size: 1.777rem;
+        line-height: 1.6901em;
+        margin-top: 0.8451em;
+    }
+    @else if $magnitude == 3
+    {
+        font-size: 2.369rem;
+        line-height: 1.2658em;
+        margin-top: 0.6329em;
+    }
+    @else if $magnitude == 4
+    {
+        font-size: 3.157rem;
+        line-height: 1.4263em;
+        margin-top: 0.4754em;
+    }    
+}
+
+html
+{
+    font-size: 125%;
+}
+
+h1, %h1
+{
+    @include scale(4);
+}
+
+h2, %h2
+{
+    @include scale(3);
+}
+
+h3, %h3
+{
+    @include scale(2);
+}
+
+h4, %h4
+{
+    @include scale(1);
+}
+
+body
+{
+    @include scale(0);
+    line-height: $magicNumber;
+}
+
+p, ul, ol
+{
+    margin-top: $magicNumberRem;
+    margin-bottom: 0;
+}

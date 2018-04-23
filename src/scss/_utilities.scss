@@ -1,0 +1,9 @@
+%not-a-list
+{
+    display: block;
+
+    > li
+    {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,9 @@
+@import '_utilities';
+@import '_typography';
+
+.list-social
+{
+    @extend %not-a-list;
+
+    text-align: center;
+}
