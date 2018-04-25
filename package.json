@@ -20,14 +20,19 @@
     "url": "https://github.com/SpliceVW/Spickle.com/issues"
   },
   "homepage": "https://github.com/SpliceVW/Spickle.com#readme",
+  "browserslist": [
+    "> 1%"
+  ],
   "devDependencies": {
     "@types/node": "^9.6.6",
+    "autoprefixer": "^8.3.0",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.8.3",
     "path": "^0.12.7",
+    "postcss-loader": "^2.1.4",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "ts-loader": "^4.2.0",

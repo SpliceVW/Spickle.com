@@ -1,0 +1,38 @@
+@import '_palette';
+@import '_typography';
+
+%page-section, .page-section
+{
+    min-height: 80vh;
+    padding: $magicNumberRem;
+}
+
+.page-header
+{
+    @extend %page-section;
+
+    background-color: $color-marigold;
+    color: $color-white;
+}
+
+.page-section:nth-of-type(even)
+{
+    background-color: $color-screen;
+    color: $color-black;
+}
+
+.page-section:nth-of-type(odd)
+{
+    background-color: $color-denim;
+    color: $color-white;
+}
+
+.page-title-first
+{
+    font-weight: 300;
+}
+.page-title-last
+{
+    font-weight: 900;
+    margin-left: -.15em;
+}
