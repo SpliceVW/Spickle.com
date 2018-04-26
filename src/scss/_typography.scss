@@ -5,52 +5,52 @@
      * vertical rhythm (http://webtypography.net/2.2.2)
 */
 
-$magicNumber: 1.5;
-$magicNumberEm: #{$magicNumber}em;
-$magicNumberRem: #{$magicNumber}rem;
+@import '~sass-math-pow/sass/math-pow';
+
+//fonts
+$font-header: 'Lato', Helvetica, sans-serif;
+$font-body: 'Roboto', Arial, sans-serif;
+
+//vertical rhythm units
+$vru: 1.6;
+$vru-em: #{$vru}em;
+$vru-rem: #{$vru}rem;
+$vru-margin-min: 1.25;
+
+//size of one character
 $charSize: .37em;
 
-$font-header: Lato, Helvetica, sans-serif;
-$font-body: Montserrat, Arial, sans-serif;
+$scale-modifier: 1.5;
+
 
 @mixin scale($magnitude, $includeMargin: true)
 {
-    $font-size: 1rem;
-    $margin: $magicNumberRem;
-    $line-height: $magicNumberRem;
+    $modular-size: 1;
+    @if $magnitude != 0 
+    {
+        $modular-size: poly-pow($scale-modifier,$magnitude);
+    }
 
-    @if $magnitude == 1
+    $margin-vrus: ceil($modular-size / $vru);
+
+    @if $margin-vrus == 0
     {
-        $font-size: 1.33rem;
-        $line-height: 1.1278em;
-        $margin: 1.1278em
+        $margin-vrus: 1;
     }
-    @else if $magnitude == 2
+    @else if ( $margin-vrus * $vru ) / $modular-size < $vru-margin-min
     {
-        $font-size: 1.777rem;
-        $line-height: 1.6901em;
-        $margin: 0.8451em;
+        $margin-vrus: $margin-vrus + 1;
     }
-    @else if $magnitude == 3
-    {
-        $font-size: 2.369rem;
-        $line-height: 1.2658em;
-        $margin: 0.6329em;
-    }
-    @else if $magnitude == 4
-    {
-        $font-size: 3.157rem;
-        $line-height: 1.4263em;
-        $margin: 0.4754em;
-    }
+
+    $margin-size: #{( $margin-vrus * $vru )}rem;
     
-    font-size: $font-size;
-    line-height: $line-height;
-    
+    font-size: #{$modular-size}rem;
+    line-height: $margin-size;
+
     @if $includeMargin == true
     {
         margin-bottom: 0;
-        margin-top: $margin;
+        margin-top: $margin-size;
 
         &:first-child, &.first-child
         {
@@ -103,7 +103,7 @@ body
 
 %blocks
 {
-    $margin: $magicNumberRem;
+    margin-top: $vru-rem;
     margin-bottom: 0;
 }
 

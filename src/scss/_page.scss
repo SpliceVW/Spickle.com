@@ -1,31 +1,51 @@
 @import '_palette';
 @import '_typography';
 
-%page-section, .page-section
+/*
+    Page Sections
+*/
+%page-section
 {
     min-height: 80vh;
-    padding: $magicNumberRem;
+    padding: $vru-rem;
 }
 
 .page-header
 {
     @extend %page-section;
 
-    background-color: $color-marigold;
+    background-color: $color-primary;
     color: $color-white;
 }
 
 .page-section:nth-of-type(even)
 {
-    background-color: $color-screen;
-    color: $color-black;
+    background-color: $color-primary;
+    color: $color-white;
 }
 
 .page-section:nth-of-type(odd)
 {
-    background-color: $color-denim;
+    background-color: $color-secondary;
     color: $color-white;
 }
+
+.page-section
+{
+    @extend %page-section;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-section-inner
+{
+    max-width: 40rem;
+}
+
+/*
+Page Title
+*/
 
 .page-title-first
 {
