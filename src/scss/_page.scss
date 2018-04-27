@@ -1,6 +1,11 @@
 @import '_palette';
 @import '_typography';
 
+body
+{
+    overflow-x: hidden;
+}
+
 /*
     Page Sections
 */
@@ -8,38 +13,96 @@
 {
     min-height: 80vh;
     padding: $vru-rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &::before
+    {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        //give a little to rid of those pesky 1px lines that sneak in sometimes
+        top: -1px;
+        bottom: -1px;
+    }
+}
+
+%page-section-inner
+{
+    z-index: 2;
+}
+
+%page-section-background-skew-left
+{
+    transform: perspective(20rem) rotateY(-1deg);
+    transform-origin: left center;
+}
+
+%page-section-background-skew-right
+{
+    transform: perspective(20rem) rotateY(1deg);
+    transform-origin: right center;
 }
 
 .page-header
 {
     @extend %page-section;
 
-    background-color: $color-primary;
     color: $color-white;
+
+    &::before
+    {
+        z-index: 1;
+        background-color: $color-primary;
+        background-image: radial-gradient(ellipse farthest-side at 100% 100%,$color-accent-2 20%, $color-primary 50%, $color-accent-1 110%);
+
+        @extend %page-section-background-skew-right;
+    }
+}
+
+.page-header-inner
+{
+    @extend %page-section-inner;
 }
 
 .page-section:nth-of-type(even)
 {
-    background-color: $color-primary;
     color: $color-white;
+
+    &::before
+    {
+        z-index: 1;
+        background-color: $color-primary;
+        @extend %page-section-background-skew-right;
+    }
 }
 
 .page-section:nth-of-type(odd)
 {
-    background-color: $color-secondary;
     color: $color-white;
+
+    &::before
+    {
+        z-index: 0;
+        background-color: $color-secondary;
+    }
 }
 
 .page-section
 {
     @extend %page-section;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .page-section-inner
 {
+    @extend %page-section-inner;
+
     max-width: 40rem;
 }
 
