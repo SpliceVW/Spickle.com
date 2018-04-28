@@ -1,0 +1,44 @@
+@mixin semiRigid-gradient($breakDefinitions, $transparency: .9, $shapeAndPosition: ellipse farthest-side at 100% 100%)
+{
+    $breakDefinitionLength: length($breakDefinitions);
+
+    $smoothGradientBreaks: ();
+    $rigidGradientBreaks: ();
+
+    $previousBreakDefinition: null;
+
+    @for $breakDefinitionNum from 1 through $breakDefinitionLength
+    {
+        $currentBreakDefinition: nth($breakDefinitions, $breakDefinitionNum);
+        $currentColor: map-get($currentBreakDefinition, color);
+        $currentPosition: map-get($currentBreakDefinition, position);
+        $smoothGradientBreaks: append($smoothGradientBreaks, $currentColor $currentPosition, comma);
+
+        @if $breakDefinitionNum > 1
+        {
+            $previousColor: map-get($previousBreakDefinition, color);
+            $previousPosition: map-get($previousBreakDefinition, position);
+
+            $mixColor: mix($currentColor, $previousColor, 50%);
+            $mixPosition: ($currentPosition + $previousPosition) / 2;
+
+            
+            $rigidGradientBreaks: append($rigidGradientBreaks, transparentize($previousColor, $transparency) $mixPosition, comma);
+            $rigidGradientBreaks: append($rigidGradientBreaks, transparentize($mixColor, $transparency) $mixPosition, comma);
+            $rigidGradientBreaks: append($rigidGradientBreaks, transparentize($mixColor, $transparency) $currentPosition, comma);
+        }
+
+        $rigidGradientBreaks: append($rigidGradientBreaks, transparentize($currentColor, $transparency) $currentPosition, comma);
+
+        $previousBreakDefinition: $currentBreakDefinition;
+    }
+
+    background-image:   radial-gradient($shapeAndPosition, $rigidGradientBreaks),
+                        radial-gradient($shapeAndPosition, $smoothGradientBreaks);
+}
+
+/*
+    ($color-accent-2, 20%)
+    ($color-primary, 50%)
+    ($color-accent-1, 110%)
+*/

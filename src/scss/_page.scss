@@ -1,5 +1,6 @@
 @import '_palette';
 @import '_typography';
+@import '_semiRigid-gradient.scss';
 
 body
 {
@@ -50,6 +51,7 @@ body
     transform-origin: right center;
 }
 
+
 .page-header
 {
     @extend %page-section;
@@ -60,8 +62,27 @@ body
     {
         z-index: 1;
         background-color: $color-primary;
-        background-image: radial-gradient(ellipse farthest-side at 100% 100%,$color-accent-2 20%, $color-primary 50%, $color-accent-1 110%);
+        $transparency: .92;
+        $breakDefinitions: (
+            (color: $color-accent-2, position: 10%)
+            (color: $color-primary, position: 50%)
+            (color: $color-accent-1, position: 100%)
+        );
 
+        @include semiRigid-gradient($breakDefinitions: $breakDefinitions, $transparency: $transparency);
+/*
+        background-image:   radial-gradient(ellipse farthest-side at 100% 100%,
+                                transparentize($color-accent-2, $transparency) 20%,
+                                transparentize($color-accent-2, $transparency) 30%,
+                                transparentize($color-primary, $transparency) 30%,
+                                transparentize($color-primary, $transparency) 60%,
+                                transparentize($color-accent-1, $transparency) 60%),
+                            radial-gradient(ellipse farthest-side at 100% 100%,
+                                $color-accent-2 20%,
+                                $color-primary 50%,
+                                $color-accent-1 110%)
+                            ;
+*/
         @extend %page-section-background-skew-right;
     }
 }
