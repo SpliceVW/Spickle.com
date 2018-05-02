@@ -1,0 +1,26 @@
+@import "_palette.scss";
+
+.socialIcon-header
+{
+}
+
+.socialIcon-list
+{
+    @extend %not-a-list;
+    margin-top: #{$vru / 4}rem;
+}
+
+.socialIcon-link
+{
+    color: $color-secondary;
+
+    &:hover
+    {
+        color: mix($color-secondary, $color-accent-3, 60%);
+    }
+
+    &:active
+    {
+        color: mix($color-secondary, $color-accent-3, 40%);
+    }
+}

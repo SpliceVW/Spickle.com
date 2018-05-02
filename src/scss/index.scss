@@ -1,10 +1,4 @@
 @import '_utilities';
 @import '_typography';
 @import '_page';
-
-.list-social
-{
-    @extend %not-a-list;
-
-    text-align: center;
-}
+@import '_socialIcons';

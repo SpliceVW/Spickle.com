@@ -1,4 +1,4 @@
-@mixin semiRigid-gradient($breakDefinitions, $transparency: .9, $shapeAndPosition: ellipse farthest-side at 100% 100%)
+@mixin semiRigid-gradient($breakDefinitions, $transparency: .9, $shapeAndPosition: ellipse farthest-corner at 100% 100%)
 {
     $breakDefinitionLength: length($breakDefinitions);
 

@@ -1,0 +1,49 @@
+
+@import '~sass-math-pow/sass/math-pow';
+
+//fonts
+$font-header: 'Lato', Helvetica, sans-serif;
+$font-body: 'Roboto', Arial, sans-serif;
+
+//vertical rhythm units
+$vru: 1.5;
+$vru-em: #{$vru}em;
+$vru-rem: #{$vru}rem;
+$vru-lineheight-min: 1.1;
+
+//size of one character
+$charSize: .37em;
+
+$scale-modifier: 1.618;
+
+
+@mixin scale($magnitude, $includeMargin: true)
+{
+    $modular-size: 1;
+    @if $magnitude != 0 
+    {
+        $modular-size: poly-pow($scale-modifier,$magnitude);
+    }
+
+    $margin-vrus: ceil($modular-size / $vru);
+    $lineheight-vrus: $margin-vrus;
+
+    @if ( $lineheight-vrus * $vru ) / $modular-size < $vru-lineheight-min
+    {
+        $lineheight-vrus: $lineheight-vrus + 1;
+    }
+
+    font-size: #{$modular-size}rem;
+    line-height: #{( $lineheight-vrus * $vru )}rem;
+
+    @if $includeMargin == true
+    {
+        margin-bottom: 0;
+        margin-top: #{( $margin-vrus * $vru )}rem;
+
+        &:first-child, &.first-child
+        {
+            margin-top: 0;
+        }
+    }
+}
