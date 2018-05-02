@@ -56,6 +56,11 @@ body
     min-height: 40vh;
 }
 
+%page-section-inner--centered
+{
+    text-align: center;
+}
+
 /* Page Header */
 
 .page-header
@@ -84,6 +89,7 @@ body
 .page-header-inner
 {
     @extend %page-section-inner;
+    @extend %page-section-inner--centered;
 }
 
 /* Page Footer */
@@ -99,8 +105,7 @@ body
 .page-footer-inner
 {
     @extend %page-section-inner;
-
-    text-align: center;
+    @extend %page-section-inner--centered;
 }
 
 .page-footer-copyright
@@ -151,10 +156,23 @@ body
     @extend %page-section--slim;
 }
 
+/*
+Page Logo
+*/
+.page-logo
+{
+    width: 19rem;
+    max-width: 100%;
+    height: auto;
+}
 
 /*
 Page Title
 */
+.page-title
+{
+    margin-top: 0;
+}
 
 .page-title-first
 {

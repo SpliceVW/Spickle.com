@@ -10,7 +10,7 @@
   <meta name="description" content="Personal website of Derek Lutz.">
   <meta name="author" content="Derek Lutz">
 
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,700,900|Roboto:400,400i,700,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,900|Roboto:400,700" rel="stylesheet">
 
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/brands.js" integrity="sha384-6jhVhr5a+Z1nLr9h+fd7ocMEo847wnGFelCHddaOOACUeZNoQwFXTxh4ysXVam8u"
     crossorigin="anonymous"></script>
@@ -25,8 +25,11 @@
         "@type": "Person",
         "givenName": "Derek",
         "familyName": "Lutz",
-        "nationality": ""
-        "email": "splicevw@spickle.com"
+        "nationality": {
+          "@type": "Country",
+          "name": "United States of America"
+        },
+        "email": "splicevw@spickle.com",
         "gender": "http://schema.org/Male",
         "address": {
           "@type": "PostalAddress",
@@ -34,10 +37,16 @@
           "addressRegion": "VA",
           "addressCountry": "USA"
         },
-        "nationality": {
-          "@type": "Country",
-          "name": "United States of America"
-        }
+        "sameAs": [
+          "https://www.linkedin.com/in/splicevw/",
+          "https://www.facebook.com/SpliceVW",
+          "https://plus.google.com/101785635020108456753",
+          "https://www.goodreads.com/user/show/22126068-derek-lutz",
+          "https://www.instagram.com/SpliceVW42/",
+          "https://twitter.com/SpliceVW",
+          "https://www.pinterest.com/splicevw/",
+          "https://github.com/SpliceVW"
+        ],
         "jobTitle": "Full-stack Web Developer"
       }
     }
@@ -46,86 +55,104 @@
 
 <body>
   <header class="page-header">
-    <h1 class="page-title"><span class="page-title-first">Derek</span> <span class="page-title-last">Lutz</span></h1>
-    <p>Welcome to my little space.</p>
+    <div class="page-header-inner">
+      <h1 class="page-title">
+        <img src="images/derek2.png" />
+        <span class="page-title-first">Derek</span>
+        <span class="page-title-last">Lutz</span>
+      </h1>
+    </div>
   </header>
   <main>
     <section class="page-section">
-      <h2>Who am I?</h2>
-      <p>I am a well rounded full stack web developer, a specialized web generalist. I'm a husband, father of two. I enjoy cooking,
-        learning new technologies, skillsets, and methodologies.</p>
-      <p>Have experience and thoroughly enjoy working in an agile scrum environment. A strong small team player who loves teaching
-        and being taught, who is not afraid to challenge the status quo.</p>
+      <div class="page-section-inner">
+        <h2>Who am I?</h2>
+        <p>Professionally, I am a full stack web developer, a specialized web generalist. I enjoy learning new
+          technologies, skillsets, and methodologies.</p>
+        <p>Having been doing web development since the mid-90s, self-taught in middle school, I embrace and champion change.</p>
+        <p>Have experience and thoroughly enjoy working in an agile scrum environment. A strong small team player who loves
+          teaching and being taught, who is not afraid to challenge the status quo.</p>
+      </div>
     </section>
     <section class="page-section">
-      <h2>Web Developer and Programmer</h2>
-      <p>
-        Web Development and Programming: HTML/XHTML/HTML5, CSS, SASS/SCSS, JavaScript, jQuery, REST, XSLT, ASP.NET, C#, PHP and at
-        one point in my life, Java, Perl, and C++. Proficient in true understanding of W3C HTML standards and WCAG 2.0 /
-        508 accessibility standards.
-      </p>
+      <div class="page-section-inner">
+        <h2>Web Developer and Programmer</h2>
+        <p>
+          Web Development and Programming: HTML/XHTML/HTML5, CSS, SASS/SCSS, JavaScript, jQuery, REST, XSLT, ASP.NET, C#, PHP and at
+          one point in my life, Java, Perl, and C++. Proficient in true understanding of W3C HTML standards and WCAG 2.0
+          / 508 accessibility standards.
+        </p>
+      </div>
     </section>
     <section class="page-section">
-      <h2>Content Management Systems</h2>
-      <p>
-        Both development and system administration for SharePoint 2007, SharePoint 2010, SharePoint 2013, including branding using
-        publishing features, JSOM/CSOM client-side solution development, .NET solution development, migration from 2007 to
-        2013, and even a PowerShell wizard. Also experience with Joomla and Wordpress development, including custom templates.
+      <div class="page-section-inner">
+        <h2>Content Management Systems</h2>
+        <p>
+          Both development and system administration for SharePoint 2007, SharePoint 2010, SharePoint 2013, including branding using
+          publishing features, JSOM/CSOM client-side solution development, .NET solution development, migration from 2007
+          to 2013, and a PowerShell wizard. Also experience with Joomla and Wordpress development, including custom
+          templates.
 
-      </p>
+        </p>
+      </div>
     </section>
 
     <section class="page-section">
-      Database Development: SQL Server, mySQL, Oracle 10g. System Administration: Microsoft Windows 2000, Microsoft Windows Server
-      2003, Microsoft Windows Server 2008, Microsoft SharePoint 2007, 2010, and 2013, IIS6/7, PowerShell, Microsoft Team
-      Foundation Server, VersionOne. Tools: Visual Studio 2005/2008/2012, Microsoft SharePoint Designer 2007/2010/2013, Serena
-      TeamTrack/SBM, Serena ChangeMan, VersionOne, Microsoft Team Foundation Server, Flowerfire Sawmill. Other: VMWare ESXi,
-      VMWare Workstation, Adobe Photoshop.</p>
+      <div class="page-section-inner">
+        Database Development: SQL Server, mySQL, Oracle 10g. System Administration: Microsoft Windows 2000, Microsoft Windows Server
+        2003, Microsoft Windows Server 2008, Microsoft SharePoint 2007, 2010, and 2013, IIS6/7, PowerShell, Microsoft Team
+        Foundation Server, VersionOne. Tools: Visual Studio 2005/2008/2012, Microsoft SharePoint Designer 2007/2010/2013,
+        Serena TeamTrack/SBM, Serena ChangeMan, VersionOne, Microsoft Team Foundation Server, Flowerfire Sawmill. Other:
+        VMWare ESXi, VMWare Workstation, Adobe Photoshop.</p>
+      </div>
     </section>
-    <section class="page-section">
-      <h2>Get in touch</h2>
-      <ul class="list-social">
-        <li>
-          <a href="https://www.linkedin.com/in/splicevw/">
-            <i title="LinkedIn" class="fab fa-linkedin fa-4x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/SpliceVW">
-            <i title="Facebook" class="fab fa-facebook fa-4x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://plus.google.com/101785635020108456753">
-            <i title="Google Plus" class="fab fa-google-plus-square fa-4x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.goodreads.com/user/show/22126068-derek-lutz">
-            <i title="Goodreads" class="fab fa-goodreads fa-4x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://web.stagram.com/splicevw42">
-            <i title="Instagram" class="fab fa-instagram fa-4x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/SpliceVW">
-            <i title="Twitter" class="fab fa-twitter-square fa-4x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://www.pinterest.com/splicevw/">
-            <i title="Pinterest" class="fab fa-pinterest-square fa-4x"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/SpliceVW">
-            <i title="Github" class="fab fa-github-square fa-4x"></i>
-          </a>
-        </li>
-      </ul>
+    <footer class="page-footer">
+      <div class="page-footer-inner">
+        <h2 class="socialIcon-header">Get in touch</h2>
+        <ul class="socialIcon-list">
+          <li class="socialIcon-item">
+            <a class="socialIcon-link" href="https://www.linkedin.com/in/splicevw/">
+              <i title="LinkedIn" class="fab fa-linkedin fa-4x"></i>
+            </a>
+          </li>
+          <li class="socialIcon-item">
+            <a class="socialIcon-link" href="https://www.facebook.com/SpliceVW">
+              <i title="Facebook" class="fab fa-facebook fa-4x"></i>
+            </a>
+          </li>
+          <li class="socialIcon-item">
+            <a class="socialIcon-link" href="https://plus.google.com/101785635020108456753">
+              <i title="Google Plus" class="fab fa-google-plus-square fa-4x"></i>
+            </a>
+          </li>
+          <li class="socialIcon-item">
+            <a class="socialIcon-link" href="https://www.goodreads.com/user/show/22126068-derek-lutz">
+              <i title="Goodreads" class="fab fa-goodreads fa-4x"></i>
+            </a>
+          </li>
+          <li class="socialIcon-item">
+            <a class="socialIcon-link" href="https://www.instagram.com/SpliceVW42/">
+              <i title="Instagram" class="fab fa-instagram fa-4x"></i>
+            </a>
+          </li>
+          <li class="socialIcon-item">
+            <a class="socialIcon-link" href="https://twitter.com/SpliceVW">
+              <i title="Twitter" class="fab fa-twitter-square fa-4x"></i>
+            </a>
+          </li>
+          <li class="socialIcon-item">
+            <a class="socialIcon-link" href="https://www.pinterest.com/splicevw/">
+              <i title="Pinterest" class="fab fa-pinterest-square fa-4x"></i>
+            </a>
+          </li>
+          <li class="socialIcon-item">
+            <a class="socialIcon-link" href="https://github.com/SpliceVW">
+              <i title="Github" class="fab fa-github-square fa-4x"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="page-footer-copyright">Spickle.com © 2000-2018 Spickle Enterprises.</p>
+      </div>
     </section>
   </main>
 <script type="text/javascript" src="bundle.js"></script></body>
