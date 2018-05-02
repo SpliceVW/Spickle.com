@@ -43,8 +43,6 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    'file-loader'
-                    /*
                     {
                         loader: 'file-loader',
                         options: {
@@ -53,7 +51,6 @@ module.exports = {
                             publicPath: 'images/'
                         }
                     }
-                    */
                 ]
             },
             { test: /\.html$/, loader: 'html-loader' }
@@ -81,9 +78,7 @@ module.exports = {
             statsFilename: 'iconstats-[hash].json',
             title: 'Spickle.com'
         }),
-        new SriPlugin({
-            enabled: process.env.NODE_ENV === 'production'
-        })
+        new SriPlugin()
     ] 
     : [ ...plugins ]
 };
