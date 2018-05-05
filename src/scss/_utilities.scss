@@ -9,3 +9,8 @@
         display: inline-block;
     }
 }
+
+%clip-circle
+{
+    clip-path: circle(50% at center);
+}

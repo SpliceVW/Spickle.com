@@ -159,11 +159,30 @@ body
 /*
 Page Logo
 */
+.page-logo-wrapper
+{
+    @extend %clip-circle;
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    &::before
+    {
+//        background-image: url('advanced-image-loader!./src/images/derek.jpg?width=20&quality=20');
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
 .page-logo
 {
-    width: 19rem;
-    max-width: 100%;
+    width: 100%;
     height: auto;
+
+    display: block;
 }
 
 /*
@@ -172,6 +191,7 @@ Page Title
 .page-title
 {
     margin-top: 0;
+    line-height: 1;
 }
 
 .page-title-first

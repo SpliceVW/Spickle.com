@@ -9,6 +9,7 @@
   </title>
   <meta name="description" content="Personal website of Derek Lutz.">
   <meta name="author" content="Derek Lutz">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="https://fonts.googleapis.com/css?family=Lato:300,900|Roboto:400,700" rel="stylesheet">
 
@@ -57,7 +58,18 @@
   <header class="page-header">
     <div class="page-header-inner">
       <div class="page-logo-wrapper">
-          <img class="page-logo" src="src/images/derek.png" alt="" />
+          <img
+            class="page-logo"
+            src="${require(`advanced-image-loader!./src/images/derek.jpg?width=380&quality=90`)}"
+            srcset="${require(`advanced-image-loader!./src/images/derek.jpg?width=270&quality=90`)} 270w,
+                    ${require(`advanced-image-loader!./src/images/derek.jpg?width=300&quality=90`)} 300w,
+                    ${require(`advanced-image-loader!./src/images/derek.jpg?width=380&quality=90`)} 380w"
+            sizes=" (max-width: 380px) 270px,
+                    (max-width: 420px) 300px,
+                    380px"
+            width="380"
+            height="380"
+            alt="" />
       </div>
       <h1 class="page-title">
         <span class="page-title-first">Derek</span>

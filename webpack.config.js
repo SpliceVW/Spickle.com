@@ -43,17 +43,18 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name]-[hash].[ext]',
-                            outputPath: 'images/',
-                            publicPath: 'images/'
-                        }
-                    }
+                    
+                    'advanced-image-loader'
                 ]
             },
-            { test: /\.html$/, loader: 'html-loader' }
+            { test: /\.html$/,
+              use: [{
+                  loader: 'html-loader',
+                  options: {
+                      interpolate: true,
+                      attrs: ['img:src', 'source:srcset']
+                  }
+                }]}
         ]
     },
     devServer: {
