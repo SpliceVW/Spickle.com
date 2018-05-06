@@ -49,6 +49,11 @@ body
     margin-bottom: 0;
 }
 
+%headings + ul
+{
+    margin-top: 0;
+}
+
 p
 {
     @extend %blocks;

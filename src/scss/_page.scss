@@ -4,7 +4,6 @@
 
 body
 {
-    overflow-x: hidden;
 }
 
 /*
@@ -147,8 +146,6 @@ body
 .page-section-inner
 {
     @extend %page-section-inner;
-
-    max-width: 40rem;
 }
 
 .page-section--slim
@@ -168,7 +165,6 @@ Page Logo
 
     &::before
     {
-//        background-image: url('advanced-image-loader!./src/images/derek.jpg?width=20&quality=20');
         position: absolute;
         top: 0;
         bottom: 0;
@@ -191,15 +187,31 @@ Page Title
 .page-title
 {
     margin-top: 0;
-    line-height: 1;
 }
 
-.page-title-first
+.page-title-image
 {
-    font-weight: 300;
+    max-width: 100%;
+    height: auto;
 }
-.page-title-last
+
+/* Page Blocks */
+%page-block
 {
-    font-weight: 900;
-    margin-left: -.15em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-block-text
+{
+    @extend %page-block;
+
+    max-width: 40rem;
+}
+
+.page-block-wide
+{
+    @extend %page-block;
+
+    max-width: 60rem;
 }

@@ -11,7 +11,7 @@
   <meta name="author" content="Derek Lutz">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,900|Roboto:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:900|Roboto:400" rel="stylesheet">
 
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/brands.js" integrity="sha384-6jhVhr5a+Z1nLr9h+fd7ocMEo847wnGFelCHddaOOACUeZNoQwFXTxh4ysXVam8u"
     crossorigin="anonymous"></script>
@@ -58,68 +58,79 @@
   <header class="page-header">
     <div class="page-header-inner">
       <div class="page-logo-wrapper">
-          <img
-            class="page-logo"
-            src="${require(`advanced-image-loader!./src/images/derek.jpg?width=380&quality=90`)}"
-            srcset="${require(`advanced-image-loader!./src/images/derek.jpg?width=270&quality=90`)} 270w,
+        <img class="page-logo" src="${require(`advanced-image-loader!./src/images/derek.jpg?width=380&quality=90`)}" srcset="${require(`advanced-image-loader!./src/images/derek.jpg?width=270&quality=90`)} 270w,
                     ${require(`advanced-image-loader!./src/images/derek.jpg?width=300&quality=90`)} 300w,
-                    ${require(`advanced-image-loader!./src/images/derek.jpg?width=380&quality=90`)} 380w"
-            sizes=" (max-width: 380px) 270px,
+                    ${require(`advanced-image-loader!./src/images/derek.jpg?width=380&quality=90`)} 380w" sizes=" (max-width: 380px) 270px,
                     (max-width: 420px) 300px,
-                    380px"
-            width="380"
-            height="380"
-            alt="" />
+                    380px" width="380" height="380" alt="" />
       </div>
       <h1 class="page-title">
-        <span class="page-title-first">Derek</span>
-        <span class="page-title-last">Lutz</span>
+        <img inline src="src/images/title.svg" class="page-title-image" />
       </h1>
     </div>
   </header>
   <main>
     <section class="page-section">
       <div class="page-section-inner">
-        <h2>Who am I?</h2>
-        <p>Professionally, I am a full stack web developer, a specialized web generalist. I enjoy learning new
-          technologies, skillsets, and methodologies.</p>
-        <p>Having been doing web development since the mid-90s, self-taught in middle school, I embrace and champion change.</p>
-        <p>Have experience and thoroughly enjoy working in an agile scrum environment. A strong small team player who loves
-          teaching and being taught, who is not afraid to challenge the status quo.</p>
+        <div class="page-block-text">
+          <h2>Who am I?</h2>
+          <p>Professionally, I am a full stack web developer, a specialized web generalist. I enjoy learning new technologies,
+            skillsets, and methodologies.</p>
+          <p>I live in Northern Virginia with my wife and two sons. Other than time with my family, I enjoy cooking, PC gaming</p>
+        </div>
       </div>
     </section>
     <section class="page-section">
       <div class="page-section-inner">
-        <h2>Web Developer and Programmer</h2>
-        <p>
-          Web Development and Programming: HTML/XHTML/HTML5, CSS, SASS/SCSS, JavaScript, jQuery, REST, XSLT, ASP.NET, C#, PHP and at
-          one point in my life, Java, Perl, and C++. Proficient in true understanding of W3C HTML standards and WCAG 2.0
-          / 508 accessibility standards.
-        </p>
+        <div class="page-block-text">
+          <h2>Web Developer and Programmer</h2>
+          <p>Having been doing web development since the mid-90s, self-taught in middle school. I embrace and champion change,
+            having grown through the changing technology landscape.</p>
+        </div>
+        <div class="page-block-wide">
+          <ul class="tile-sections">
+            <li class="tile-section">
+              <h3 class="tile-section-header">Web Development</h3>
+              <ul class="tile-section-items">
+                <li>HTML5</li>
+                <li>CSS / SASS</li>
+                <li>JavaScript / TypeScript</li>
+                <li>Web Accessibility / WCAG 2.0 / Section 508</li>
+                <li>Gulp / Webpack</li>
+                <li>React / Angular / Vue / Knockout</li>
+              </ul>
+            </li>
+            <li class="tile-section">
+              <h3 class="tile-section-header">Programming</h3>
+              <ul class="tile-section-items">
+                <li>C#</li>
+                <li>ASP.NET MVC</li>
+                <li>PHP</li>
+                <li>Java</li>
+                <li>Perl</li>
+              </ul>
+            </li>
+            <li class="tile-section">
+              <h3 class="tile-section-header">Database Development</h3>
+              <ul class="tile-section-items">
+                <li>Microsoft SQL Server</li>
+                <li>mySQL</li>
+              </ul>
+            </li>
+            <li class="tile-section">
+              <h3 class="tile-section-header">Content Management Systems</h3>
+              <ul class="tile-section-items">
+                <li>Microsoft SharePoint</li>
+                <li>Joomla</li>
+                <li>Drupal</li>
+                <li>Wordpress</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
-    <section class="page-section">
-      <div class="page-section-inner">
-        <h2>Content Management Systems</h2>
-        <p>
-          Both development and system administration for SharePoint 2007, SharePoint 2010, SharePoint 2013, including branding using
-          publishing features, JSOM/CSOM client-side solution development, .NET solution development, migration from 2007
-          to 2013, and a PowerShell wizard. Also experience with Joomla and Wordpress development, including custom
-          templates.
 
-        </p>
-      </div>
-    </section>
-
-    <section class="page-section">
-      <div class="page-section-inner">
-        Database Development: SQL Server, mySQL, Oracle 10g. System Administration: Microsoft Windows 2000, Microsoft Windows Server
-        2003, Microsoft Windows Server 2008, Microsoft SharePoint 2007, 2010, and 2013, IIS6/7, PowerShell, Microsoft Team
-        Foundation Server, VersionOne. Tools: Visual Studio 2005/2008/2012, Microsoft SharePoint Designer 2007/2010/2013,
-        Serena TeamTrack/SBM, Serena ChangeMan, VersionOne, Microsoft Team Foundation Server, Flowerfire Sawmill. Other:
-        VMWare ESXi, VMWare Workstation, Adobe Photoshop.</p>
-      </div>
-    </section>
     <footer class="page-footer">
       <div class="page-footer-inner">
         <h2 class="socialIcon-header">Get in touch</h2>
@@ -167,7 +178,7 @@
         </ul>
         <p class="page-footer-copyright">Spickle.com © 2000-2018 Spickle Enterprises.</p>
       </div>
-    </section>
+      </section>
   </main>
 </body>
 

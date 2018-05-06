@@ -1,0 +1,23 @@
+@import '_palette';
+@import '_scale';
+
+.tile-sections
+{
+    @extend %not-a-list;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: $vru-rem #{$vru * -1}rem;
+}
+
+.tile-section
+{
+    flex: 1 1 auto;
+
+    margin: $vru-rem;
+    padding: $vru-rem;
+
+    background-color: transparentize($color-accent-2, .9);
+    color: #fff;
+}

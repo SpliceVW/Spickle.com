@@ -4,12 +4,17 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CriticalPlugin = require('webpack-plugin-critical').CriticalPlugin;
 const FaviconsPlugin = require('favicons-webpack-plugin');
 const SriPlugin = require('webpack-subresource-integrity');
+const HtmlWebpackInlineSVGPlugin = require('webpack-html-plugin-svg-inline');
 
-const plugins = [new HtmlWebpackPlugin({
-    title: 'Spickle.com',
-    template: 'index.html',
-    filename: 'index.html'
-})];
+
+const plugins = [
+    new HtmlWebpackPlugin({
+        title: 'Spickle.com',
+        template: 'index.html',
+        filename: 'index.html'
+    }),
+    new HtmlWebpackInlineSVGPlugin()
+];
 
 
 module.exports = {
@@ -41,10 +46,9 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(png|jpg|gif|svg)$/,
                 use: [
-                    
-                    'advanced-image-loader'
+                    'file-loader'
                 ]
             },
             { test: /\.html$/,
@@ -81,5 +85,5 @@ module.exports = {
         }),
         new SriPlugin()
     ] 
-    : [ ...plugins ]
+    : plugins
 };

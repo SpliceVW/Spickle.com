@@ -1,4 +1,10 @@
 @import '_utilities';
 @import '_typography';
 @import '_page';
+@import '_tile';
 @import '_socialIcons';
+
+*, *::before, *::after
+{
+    box-sizing: border-box;
+}
